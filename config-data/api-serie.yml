@@ -10,10 +10,6 @@ spring:
       database: serie-dev-mongo
       port: 27017
       host: localhost
-  jpa:
-    hibernate.ddl-auto: update
-    generate-ddl: true
-    show-sql: true
 
 info:
   aplication:
