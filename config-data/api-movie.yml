@@ -27,6 +27,21 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 resilience4j:
+  retry:
+    configs:
+      default:
+        max-retry-attempts: 3
+        wait-duration: 1s
+        retry-exceptions:
+          - java.io.IDException
+          - java.net.SocketTimeoutException
+      instances:
+        retryMovie:
+          base-config: default
+          max-retry-attempts: 5
+          wait-duration: 2s
+          retry-exceptions:
+            - java.net.ConnectException
   circuitbreaker:
     configs:
       default:
