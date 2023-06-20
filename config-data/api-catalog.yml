@@ -16,13 +16,6 @@ eureka:
 
 resilience4j:
   retry:
-    configs:
-      default:
-        maxRetryAttempts: 3
-        waitDuration: 1s
-        retryExceptions:
-          - java.io.IDException
-          - java.net.SocketTimeoutException
     instances:
       retryConfig:
         baseConfig: default
@@ -31,15 +24,6 @@ resilience4j:
         retryExceptions:
           - java.net.ConnectException
   circuitbreaker:
-    configs:
-      default:
-        registerHealthIndicator: true
-        slidingWindowSize: 10
-        minimumNumberOfCalls: 5
-        permittedNumberOfCallsInHalfOpenState: 3
-        waitDurationInOpenState: 30s
-        automaticTransitionFromOpenToHalfOpenEnabled: true
-        failureRateThreshold: 50
     instances:
       clientConfig:
         baseConfig: default
