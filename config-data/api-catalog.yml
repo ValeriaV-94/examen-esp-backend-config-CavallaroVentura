@@ -17,15 +17,15 @@ eureka:
 resilience4j:
   retry:
     instances:
-      retryConfig:
+      retryCatalog:
         baseConfig: default
         maxRetryAttempts: 5
         waitDuration: 2s
         retryExceptions:
-          - java.net.ConnectException
+          - feign.FeignException$InternalServerError
   circuitbreaker:
     instances:
-      clientConfig:
+      clientCatalog:
         slidingWindowType: COUNT_BASED
         slidingWindowSize: 5
         waitDurationInOpenState: 1m
