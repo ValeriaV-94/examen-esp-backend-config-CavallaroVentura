@@ -24,7 +24,7 @@ resilience4j:
           - java.io.IDException
           - java.net.SocketTimeoutException
       instances:
-        retryMovie:
+        retryConfig:
           base-config: default
           max-retry-attempts: 5
           wait-duration: 2s
