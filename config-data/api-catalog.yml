@@ -26,8 +26,8 @@ resilience4j:
   circuitbreaker:
     instances:
       clientConfig:
-        baseConfig: default
         slidingWindowType: COUNT_BASED
         slidingWindowSize: 5
         waitDurationInOpenState: 1m
         failureRateThreshold: 20
+
