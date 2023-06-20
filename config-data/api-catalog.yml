@@ -24,7 +24,7 @@ resilience4j:
           - java.io.IDException
           - java.net.SocketTimeoutException
       instances:
-        retryMovie:
+        retryConfig:
           base-config: default
           max-retry-attempts: 5
           wait-duration: 2s
@@ -41,7 +41,7 @@ resilience4j:
         automatic-transition-from-open-to-half-open-enabled: true
         failure-rate-threshold: 50
     instances:
-      clientMovie:
+      clientConfig:
         base-config: default
         sliding-window-type: COUNT_BASED
         sliding-window-size: 5
