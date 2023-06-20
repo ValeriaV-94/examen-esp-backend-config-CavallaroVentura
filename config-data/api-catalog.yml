@@ -47,3 +47,4 @@ resilience4j:
         slidingWindowSize: 5
         waitDurationInOpenState: 1m
         failureRateThreshold: 20
+
