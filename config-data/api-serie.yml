@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: api-serie
+
   data:
     mongodb:
       username: usr-serie-mongo

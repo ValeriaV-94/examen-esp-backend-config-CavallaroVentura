@@ -3,7 +3,13 @@ server:
 spring:
   application:
     name: api-catalog
-
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5673
+  zipkin:
+    baseUrl: http://localhost:9412/
 eureka:
   instance:
     hostname: localhost
@@ -31,3 +37,4 @@ resilience4j:
       retryCatalog:
         maxAttempts: '3'
         waitDuration: '1000'
+
