@@ -10,6 +10,11 @@ spring:
     port: 5673
   zipkin:
     baseUrl: http://localhost:9412/
+  data:
+    mongodb:
+      database: test
+      port: 27018
+      host: localhost
 eureka:
   instance:
     hostname: localhost
