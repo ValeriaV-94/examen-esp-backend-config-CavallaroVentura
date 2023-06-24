@@ -3,7 +3,8 @@ server:
 spring:
   application:
     name: api-serie
-
+  zipkin:
+    baseUrl: http://localhost:9412/
   data:
     mongodb:
       username: usr-serie-mongo
