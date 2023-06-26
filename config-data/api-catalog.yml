@@ -17,6 +17,7 @@ spring:
       database: catalog-dev-mongo
       port: 27019
       host: localhost
+
 eureka:
   instance:
     hostname: localhost
@@ -31,17 +32,18 @@ resilience4j:
   circuitbreaker:
     instances:
       ClientCatalog:
-        registerHealthIndicator: 'true'
-        allowHealthIndicatorToFail: 'false'
+        registerHealthIndicator: true
+        allowHealthIndicatorToFail: false
         slidingWindowType: COUNT_BASED
-        slidingWindowSize: '10'
-        failureRateThreshold: '40'
-        permittedNumberOfCallsInHalfOpenState: '3'
-        automaticTransitionFromOpenToHalfOpenEnabled: 'true'
-        waitDurationInOpenState: '15000'
+        slidingWindowSize: 10
+        failureRateThreshold: 40
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 15000
   retry:
     instances:
       retryCatalog:
-        maxAttempts: '3'
-        waitDuration: '1000'
-
+        maxAttempts: 3
+        waitDuration: 1000
+        retryExceptions:
+          - feign.FeignException$InternalServerError
